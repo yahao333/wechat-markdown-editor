@@ -72,7 +72,7 @@ const Toolbar: React.FC<ToolbarProps> = ({
                               >
                                  <div className="flex items-center gap-3">
                                     <div
-                                       className="w-4 h-4 rounded-full border border-black/10"
+                                       className="w-5 h-5 rounded-full border border-gray-200 shadow-sm ring-2 ring-white"
                                        style={{ backgroundColor: themes[themeKey].h2.color }}
                                     />
                                     <span className="capitalize">{themeKey}</span>
