@@ -51,6 +51,7 @@ const baseStyles: Partial<ThemeStyles> = {
 
 const createTheme = (primaryColor: string, secondaryColor: string, bgColor: string): ThemeStyles => ({
   ...baseStyles as ThemeStyles,
+  primaryColor,
   h1: {
     fontSize: '22px',
     fontWeight: 'bold',
@@ -95,7 +96,7 @@ const createTheme = (primaryColor: string, secondaryColor: string, bgColor: stri
     backgroundColor: '#f2f2f2',
     padding: '2px 5px',
     borderRadius: '3px',
-    color: primaryColor, 
+    color: primaryColor,
     fontSize: '14px',
     fontFamily: 'Menlo, Monaco, Consolas, "Courier New", monospace',
     margin: '0 2px',
@@ -120,6 +121,7 @@ const createTheme = (primaryColor: string, secondaryColor: string, bgColor: stri
 const latteTheme: ThemeStyles = {
   ...baseStyles as ThemeStyles,
   h2Prefix: '🧋',
+  primaryColor: '#b98556',
   h1: {
     fontSize: '22px',
     fontWeight: 'bold',

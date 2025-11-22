@@ -23,6 +23,8 @@ export interface ThemeStyles {
   td: React.CSSProperties;
   // Optional prefix for H2 (e.g. an icon)
   h2Prefix?: string;
+  // Representative color for the theme (used in UI)
+  primaryColor?: string;
 }
 
 export type ThemeKey = 'default' | 'blue' | 'purple' | 'orange' | 'latte';
