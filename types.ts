@@ -42,6 +42,6 @@ export interface ToolbarProps {
   currentMode: ViewMode;
   onToggleMode: () => void;
   onExport: () => void;
-  currentThemeKey: ThemeKey;
-  onSetTheme: (key: ThemeKey) => void;
+  currentTheme?: ThemeKey;
+  onSetTheme?: (theme: ThemeKey) => void;
 }

@@ -39,11 +39,11 @@ greet('Developer');
 const App: React.FC = () => {
   const [markdown, setMarkdown] = useState<string>(DEFAULT_MD);
   const [viewMode, setViewMode] = useState<ViewMode>(ViewMode.EDITOR);
-  const [themeKey, setThemeKey] = useState<ThemeKey>('default');
+  const [currentTheme, setCurrentTheme] = useState<ThemeKey>('default');
   const inputRef = useRef<HTMLTextAreaElement>(null);
-  
+
   // Toast state
-  const [toast, setToast] = useState<{msg: string, visible: boolean}>({ msg: '', visible: false });
+  const [toast, setToast] = useState<{ msg: string, visible: boolean }>({ msg: '', visible: false });
 
   const showToast = (msg: string) => {
     setToast({ msg, visible: true });
@@ -79,39 +79,39 @@ const App: React.FC = () => {
       {/* Header */}
       <header className="h-12 bg-white border-b border-gray-200 flex items-center justify-center shrink-0 z-10">
         <h1 className="font-semibold text-gray-800">
-            {viewMode === ViewMode.EDITOR ? 'Editing' : 'Preview'}
+          {viewMode === ViewMode.EDITOR ? 'Editing' : 'Preview'}
         </h1>
       </header>
 
       {/* Main Content Area */}
       <main className="flex-1 overflow-hidden relative">
         {viewMode === ViewMode.EDITOR ? (
-            <Editor 
-                value={markdown} 
-                onChange={setMarkdown} 
-                inputRef={inputRef} 
-            />
+          <Editor
+            value={markdown}
+            onChange={setMarkdown}
+            inputRef={inputRef}
+          />
         ) : (
-            <Preview markdown={markdown} theme={themes[themeKey]} />
+          <Preview markdown={markdown} theme={themes[currentTheme]} />
         )}
-        
+
         {/* Toast Notification */}
-        <div 
-            className={`absolute top-4 left-1/2 transform -translate-x-1/2 bg-black/70 text-white px-4 py-2 rounded-full text-sm transition-opacity duration-300 pointer-events-none ${toast.visible ? 'opacity-100' : 'opacity-0'}`}
+        <div
+          className={`absolute top-4 left-1/2 transform -translate-x-1/2 bg-black/70 text-white px-4 py-2 rounded-full text-sm transition-opacity duration-300 pointer-events-none ${toast.visible ? 'opacity-100' : 'opacity-0'}`}
         >
-            {toast.msg}
+          {toast.msg}
         </div>
       </main>
 
       {/* Bottom Toolbar */}
       <footer className="shrink-0 z-20 relative">
-        <Toolbar 
-            onInsert={handleInsert} 
-            currentMode={viewMode} 
-            onToggleMode={handleToggleMode}
-            onExport={handleExport}
-            currentThemeKey={themeKey}
-            onSetTheme={setThemeKey}
+        <Toolbar
+          onInsert={handleInsert}
+          currentMode={viewMode}
+          onToggleMode={handleToggleMode}
+          onExport={handleExport}
+          currentTheme={currentTheme}
+          onSetTheme={setCurrentTheme}
         />
       </footer>
     </div>
