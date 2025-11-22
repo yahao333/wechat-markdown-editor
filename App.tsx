@@ -1,5 +1,17 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Editor from './components/Editor';
+
+const XLogo = ({ size = 12, className = "" }: { size?: number, className?: string }) => (
+  <svg
+    viewBox="0 0 24 24"
+    width={size}
+    height={size}
+    className={className}
+    fill="currentColor"
+  >
+    <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z" />
+  </svg>
+);
 import Preview from './components/Preview';
 import Toolbar from './components/Toolbar';
 import { ViewMode, ThemeKey } from './types';
@@ -113,6 +125,16 @@ const App: React.FC = () => {
           currentTheme={currentTheme}
           onSetTheme={setCurrentTheme}
         />
+        <div className="bg-white pb-2 pt-1 flex justify-center">
+          <a
+            href="https://x.com/pai12468"
+            target="_blank"
+            rel="noreferrer"
+            className="text-xs text-gray-400 hover:text-gray-600 flex items-center gap-1 transition-colors"
+          >
+            <XLogo size={11} />
+          </a>
+        </div>
       </footer>
     </div>
   );
