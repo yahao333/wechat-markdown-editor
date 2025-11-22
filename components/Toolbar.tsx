@@ -18,6 +18,18 @@ import {
 import { ToolbarProps, ViewMode, ThemeKey } from '../types';
 import { themes } from '../styles';
 
+const XLogo = ({ size = 12, className = "" }: { size?: number, className?: string }) => (
+   <svg
+      viewBox="0 0 24 24"
+      width={size}
+      height={size}
+      className={className}
+      fill="currentColor"
+   >
+      <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z" />
+   </svg>
+);
+
 const Toolbar: React.FC<ToolbarProps> = ({
    onInsert,
    currentMode,
@@ -101,6 +113,15 @@ const Toolbar: React.FC<ToolbarProps> = ({
    return (
       <div className={`${containerClass} flex items-center justify-between`}>
          <div className="flex items-center gap-1 overflow-x-auto hide-scrollbar pr-2 flex-1">
+            <a
+               href="https://x.com/pai12468"
+               target="_blank"
+               rel="noreferrer"
+               className={btnClass}
+               aria-label="X (Twitter)"
+            >
+               <XLogo size={18} />
+            </a>
             <button onClick={() => onInsert('## ')} className={btnClass} aria-label="Heading">
                <Heading2 size={22} strokeWidth={2.5} />
             </button>
