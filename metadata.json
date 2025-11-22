@@ -1,0 +1,5 @@
+{
+  "name": "WeChat Markdown Editor",
+  "description": "A mobile-first, Markdown-only editor designed for WeChat Official Accounts. Features real-time preview, WeChat-compliant styling, and one-click HTML export.",
+  "requestFramePermissions": []
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="https://upload.wikimedia.org/wikipedia/commons/4/42/Markdown-mark.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <title>WeChat MD Editor</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Add highlight.js styling for code blocks -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              wechat: {
+                primary: '#07c160',
+                bg: '#ededed',
+                text: '#333333',
+                secondary: '#888888',
+                border: '#e5e5e5'
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      /* Global Reset for Mobile */
+      html, body {
+        height: 100%;
+        overflow: hidden; /* Prevent body scroll, handle inside app */
+        background-color: #ededed;
+        -webkit-tap-highlight-color: transparent;
+      }
+      #root {
+        height: 100%;
+      }
+      
+      /* Utility: Safe Area Padding for iPhone X+ */
+      .safe-area-pb {
+        padding-bottom: constant(safe-area-inset-bottom); /* iOS 11.0 */
+        padding-bottom: env(safe-area-inset-bottom); /* iOS 11.2+ */
+      }
+
+      /* Utility: Hide Scrollbar but keep functionality */
+      .hide-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .hide-scrollbar {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-markdown": "https://aistudiocdn.com/react-markdown@^10.1.0",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "rehype-raw": "https://aistudiocdn.com/rehype-raw@^7.0.0",
+    "rehype-highlight": "https://aistudiocdn.com/rehype-highlight@^7.0.2",
+    "remark-gfm": "https://aistudiocdn.com/remark-gfm@^4.0.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
